@@ -24,6 +24,10 @@ Rotating the keys will cause the Primary Key to be set to the Secondary Key and 
 
 ![Rotated API Key Button](./docs/api_keys/rotated_api_key.png)
 
+## Authenticating using API Keys
+
+Your user API Key should be supplied to the ThoughtRiver APIs by setting the `X-Api-Key` HTTP header in your API requests to either of the generated API keys.
+
 ## API Base URL
 
 A ThoughtRiver Customer instance is hosted in 1 of 3 regions.  Each of which has its own base URL.  You can tell which region you are hosted in by looking at the ThoughtRiver Web Application URL:
