@@ -46,11 +46,11 @@ AP - `https://api2-ap.thoughtriver.review/api/`
 
 ## Uploading a contract
 
-TBD
+[See here](./samples/python/upload-contract/README.md)
 
 ## Being notified a contract has been processed
 
-TBD
+[See here](./samples/python/receive-webhook-notifications/README.md)
 
 ## Retrieving a contract analysis report
 
