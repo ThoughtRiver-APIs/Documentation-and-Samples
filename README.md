@@ -48,6 +48,10 @@ AP - `https://api2-ap.thoughtriver.review/api/`
 
 [See here](./samples/python/upload-contract/)
 
+## Downloading a list of contracts and the contract files
+
+[See here](./samples/python/download-contract/)
+
 ## Being notified a contract has been processed
 
 [See here](./samples/python/receive-webhook-notifications/)
