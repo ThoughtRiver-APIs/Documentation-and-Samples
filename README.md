@@ -48,6 +48,8 @@ AP - `https://api2-ap.thoughtriver.review/api/`
 
 [See here](./samples/python/upload-contract/)
 
+Example request and response details are available using the ThoughtRiver API [Contract Management OpenAPI](https://api2-uk.thoughtriver.review/api/contract-management/latest/docs#/Contract) documentation.
+
 ## Being notified a contract has been processed
 
 [See here](./samples/python/receive-webhook-notifications/)
@@ -60,7 +62,7 @@ Once a contract has been processed you can retrieve an analysis report using the
 
 The `version-uuid` can be found by observing the UUID in a contracts URL within the ThoughtRiver Web Application following the following path `/version/` in the query string.
 
-An example payload is available using the ThoughtRiver API [Contract Content OpenAPI](https://api2-uk.thoughtriver.review/api/contract-content/latest/docs#/Versions/get_contract_version_report) docuemntation.
+An example payload is available using the ThoughtRiver API [Contract Content OpenAPI](https://api2-uk.thoughtriver.review/api/contract-content/latest/docs#/Versions/get_contract_version_report) documentation.
 
 ## Additional APIs
 
