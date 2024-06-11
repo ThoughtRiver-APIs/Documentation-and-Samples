@@ -50,6 +50,10 @@ AP - `https://api2-ap.thoughtriver.review/api/`
 
 Example request and response details are available using the ThoughtRiver API [Contract Management OpenAPI](https://api2-uk.thoughtriver.review/api/contract-management/latest/docs#/Contract) documentation.
 
+## Downloading a list of contracts and the contract files
+
+[See here](./samples/python/download-contract/)
+
 ## Being notified a contract has been processed
 
 [See here](./samples/python/receive-webhook-notifications/)
