@@ -1,7 +1,7 @@
 
 
 ## What is a Contract Processing Complete Web Hook URL?
-A Contract Processing Complete Web Hook URL is a public URL where the ThoughtRiver Platfrom can send HTTP POST requests to let a 3rd party know that a contract has completed processing.
+A Contract Processing Complete Web Hook URL is a public URL where the ThoughtRiver Platfrom can send HTTP GET requests to let a 3rd party know that a contract has completed processing.
 
 It can be supplied to the ThroughtRiver Platform when using ThoughtRiver's API to upload a contract or contract version.
 
@@ -9,15 +9,15 @@ The path and query string of this URL can be of your own design, but it is recom
 
 This sample uses the following URL structure:
 
-`/contract-processing-complete/{contract_id}?tr_id={thoughtriver_version_id}`
+`/contract-processing-complete/{contract_id}?tr_id={thoughtriver_version_id}&upload_status={status}`
 
-where the `contract_id` path variable should be supplied as part of the callback URL given when uploading the contract and unique to each contract uploaded.  The `thoughtriver_version_id` is the ThoughtRiver Platform version id for the uploaded contract.
+where the `contract_id` path variable should be supplied as part of the callback URL given when uploading the contract and unique to each contract uploaded. The `thoughtriver_version_id` is the ThoughtRiver Platform version id for the uploaded contract. The `status` is the state of the contract in the ThoughtRiver platform when processing finishes. It is either `success` indicating a successful upload and processing completed, `awaiting_*` indicating user action required, or `fail_*` indicating that the contract has failed at a particular stage.
 
 When the calling code supplies the call back URL it should do so using the following f-string:
 
-`f"{callback_base_url}/contract-processing-complete/{upload_unique_id}?tr_id={{thoughtriver_version_id}}"`
+`f"{callback_base_url}/contract-processing-complete/{upload_unique_id}?tr_id={{thoughtriver_version_id}}&upload_status={{status}}"`
 
-_NOTE: the double curly braces `{{ }}` around `thoughtriver_version_id` indicating that the ThoughtRiver platform will replace this with the contract version id.  Where as only has singl curly braces `{ }` indicating `upload_unique_id` is replaced by the calling code._
+_NOTE: the double curly braces `{{ }}` around `thoughtriver_version_id` and `status` indicate that the ThoughtRiver platform will replace these with the contract version id and status respectively.  Whereas only has single curly braces `{ }` indicates `upload_unique_id` is replaced by the calling code._
 
 ## Using a local Request URL for development
 If you’re just getting started with your app development, you probably don’t have a publicly accessible URL yet.  Eventually, you’ll want to set that up, but for now a development proxy like [ngrok](https://ngrok.com/docs/what-is-ngrok/) can be used.

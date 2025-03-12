@@ -36,6 +36,8 @@ if __name__ == "__main__":
         print(f"THOUGHTRIVER_BASE_URL: {thoughtriver_base_url}")
         callback_base_url = get_env_var("CALLBACK_BASE_URL")
         print(f"CALLBACK_BASE_URL: {callback_base_url}")
+        thoughtriver_ui_url = get_env_var("THOUGHTRIVER_UI_URL")
+        print(f"THOUGHTRIVER_UI_URL: {thoughtriver_ui_url}")
         print("")
     except Exception as ex:
         print(ex)
@@ -47,10 +49,10 @@ if __name__ == "__main__":
     )
     print("")
 
-    webhook_url = f"{callback_base_url}/contract-processing-complete/{upload_unique_id}?tr_id={{thoughtriver_version_id}}"
+    webhook_url = f"{callback_base_url}/contract-processing-complete/{upload_unique_id}?tr_id={{thoughtriver_version_id}}&upload_status={{status}}"
     print("Request a callback from ThoughtRiver Platform to a unique url.")
     print(
-        "Optionally include the ThoughtRiver version is to be included in the response"
+        "Optionally include the ThoughtRiver version and upload status are to be included in the response"
     )
     print(webhook_url)
     print("")
@@ -83,7 +85,11 @@ if __name__ == "__main__":
             "Please await your callback via the web hook provided, or monitor the contract via the ThoughtRiver App."
         )
         print("")
-
+        print(f"If you need to confirm parties, use the following URL:")
+        print(
+            f"{thoughtriver_ui_url}/review/{uploaded_contract_ids['version_uuid']}/parties"
+        )
+        print("")
         input("Once the callback is recieved, press Enter to load report...")
         report_url = f"{thoughtriver_base_url}/contract-content/latest/contract-versions/{uploaded_contract_ids['version_uuid']}/report"
         print(report_url)
