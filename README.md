@@ -1,9 +1,3 @@
-# ThoughtRiver-APIs-Development
-Private counterpart to the public-facing thoughtriver APIs repo, use for WIP etc
-
-
-[https://github.com/ThoughtRiver-APIs/Documentation-and-Samples](https://github.com/ThoughtRiver-APIs/Documentation-and-Samples)
-
 # Documentation-and-Samples
 
 ## Generating API Keys
