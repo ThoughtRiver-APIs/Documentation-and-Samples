@@ -26,7 +26,6 @@ From a terminal, located within the `upload-contract` folder:
   - `THOUGHTRIVER_API_KEY={your_key}`
   - `THOUGHTRIVER_BASE_URL=https://api2-{your_region}.thoughtriver.review/api`
   - `CALLBACK_BASE_URL=https://{your_ngrok_instance}.ngrok.app`
-  - `THOUGHTRIVER_UI_URL=https://{your_region}.thoughtriver.com/@{your_tenant_code}`
 
 ### Upload a contract
 
